@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast.makeText as toastMakeText
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,12 +19,17 @@ class MainActivity : AppCompatActivity() {
         // val textView1=findViewById<TextView>(R.id.textview1)
         //val button1=findViewById<Button>(R.id.button1)
 
-
-        textview1.setOnClickListener({
+        textview1.setOnClickListener {
             Toast.makeText(this, "Hai", Toast.LENGTH_SHORT).show()
-        })
+        }
+
         button1.setOnClickListener {
-            val intent = Intent(this@MainActivity,HitungActivity::class.java)
+            val intent = Intent(this@MainActivity, HitungActivity::class.java)
+            startActivity(intent)
+        }
+
+        button2.setOnClickListener {
+            val intent = Intent(this@MainActivity, GameActivity::class.java)
             startActivity(intent)
         }
 
